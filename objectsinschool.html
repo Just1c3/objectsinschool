@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>School</title>
+    <script src="objects.js"></script>
+    <script src="data.js"></script>
+    <script src="actions.js"></script>
+    <link rel="stylesheet"
+          href="objectsinschool.css"/>
+</head>
+
+<body onload="outputOptions();console.log(allItems);">
+
+
+<h1> Berkeley High School Administration System</h1>
+
+<hr>
+<h1>List Information</h1>
+<table align="center" border="1">
+    <tr>
+        <th> <select id="list">
+            <option value="0">Students</option>
+            <option value="1">Teachers</option>
+            <option value="2">Sections</option>
+        </select> </th>
+        <th> <button  type="button" class="btn btn-primary" id="listCat" onclick="list()">List Items</button>
+        </th>
+    </tr>
+</table>
+<div align="center" id = "listOutput"></div>
+
+<hr>
+
+<h1>Add Students, Teachers, or Sections</h1>
+
+
+<table align="center" class="table table-hover">
+    <tr id="studentName">
+        <td> <input id="studentFirstName" placeholder="first name"> </input> </td>
+        <td> <input id="studentLastName" placeholder="last name"> </input> </td>
+        <td> <input id="studentGrade" placeholder="grade"> </input> </td>
+        <th> <button id="addStudent"  type="button" class="btn btn-primary" onclick="addStudent()" >Add Student</button>
+    </tr>
+    <tr id = "teacherName">
+        <td> <input id="teacherFirstName" placeholder="first name"> </input> </td>
+        <td> <input id="teacherLastName" placeholder="last name"> </input> </td>
+        <td> <input id="teacherSubject" placeholder="subject"> </input> </td>
+        <th> <button id="addTeacher"  type="button" class="btn btn-primary" onclick="addTeacher()">Add Teacher</button>
+    </tr>
+    <tr id="sectionName">
+        <td> <input id= "sectionSubject" placeholder="section name"> </input> </td>
+        <td> <input id="sectionCount" placeholder="section count"> </input> </td>
+        <th> <button id="addSection"  type="button" class="btn btn-primary" onclick="addSection()" >Add Section</button>
+    </tr>
+</table>
+<hr>
+
+<h2>Add Students To Sections</h2>
+
+<table align="center" border="1" class="table table-hover">
+    <tr>
+        <td> <select id="student"></select> </td>
+        <td> <select id="section"></select> </td>
+        <th> <button id="sectionPlus"  type="button" class="btn btn-primary" onclick="addStudentsToSection()">Add To Section</button>
+        </th>
+    </tr>
+</table>
+<hr>
+
+<h2>Add Teachers To Section</h2>
+<table align="center" border="1" class="table table-hover">
+    <tr>
+        <td> <select id="teacher"></select> </td>
+        <td> <select id="section2"></select> </td>
+        <th> <button id="sectionPlus2" type="button" class="btn btn-primary" onclick="addTeacherToSection()">Add To Section</button>
+        </th>
+    </tr>
+</table>
+<hr>
+<h1>List Information In Sections</h1>
+<table align="center" border="1">
+    <tr>
+        <th> <select id="sectionList">
+            <option value="0">Math</option>
+            <option value="1">Science</option>
+            <option value="2">History</option>
+            <option value="3">CS</option>
+            <option value="4">Geography</option>
+
+        </select> </th>
+        <th> <button  type="button" class="btn btn-primary" id="listSection" onclick="sectionList()">List Students in Section</button>
+        </th>
+    </tr>
+</table>
+<div align="center" id = "listedSections"></div>
+
+
+<div id = "getAdded"></div>
+
+<hr>
+
+
+</body>
+</html>
